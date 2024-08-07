@@ -86,6 +86,11 @@ class Hand:
         else:
             return False
 
+
+    def rankCheck(self, cardRank, other):
+        
+
+
     def __str__(self):
         return ', '.join([str(card) for card in self.hand])
 
@@ -125,7 +130,7 @@ def botRequest(player_hand, other_player_hand):
     card = random.choice(receiving_hand)
     cardRank = card.getRank()
     answer = input("Do you have a " + str(cardRank) + "");
-    hasCard = user_hand.cardCheck(card) #This is currently not working
+    hasCard = giving_hand.RankCheck(cardRank, receiving_hand) #This is currently not working
     if (answer.upper() == "yes".upper()) and hasCard:
         cardExchange(receiving_hand, giving_hand, card)
     else:
